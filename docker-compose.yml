@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  db:
+    container_name: 'taskpostgres'
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: manuvski
+      POSTGRES_DB: manuvski
+      POSTGRES_PASSWORD: manuvski
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
